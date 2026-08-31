@@ -1,0 +1,35 @@
+# --- Real data: never commit actual institutional data ---
+data/items.json
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.Python
+build/
+dist/
+
+# --- Environment / secrets ---
+.env
+.env.*
+config.yaml
+
+# --- Testing / coverage ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Editor / OS cruft ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# --- Logs ---
+*.log
