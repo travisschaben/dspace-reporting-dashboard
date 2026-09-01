@@ -1,0 +1,8 @@
+# Runtime + test dependencies for the DSpace reporting sync pipeline.
+# Pinned to compatible minor releases; bump deliberately.
+
+requests~=2.32       # HTTP client for the DSpace discovery API
+PyYAML~=6.0          # config.yaml loading
+
+# Testing (kept in one file to match the brief's layout)
+pytest~=8.3

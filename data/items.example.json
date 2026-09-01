@@ -1,0 +1,292 @@
+{
+  "generated_at": "2024-01-15T09:00:00Z",
+  "source": "https://dspace.example.edu/server",
+  "communities": [
+    "Biological Sciences",
+    "History",
+    "Computer Science"
+  ],
+  "item_count": 28,
+  "items": [
+    {
+      "uuid": "00000000-0000-4000-8000-000000000001",
+      "title": "[SAMPLE] Seasonal variation in freshwater invertebrate communities",
+      "department": "Biological Sciences",
+      "type": "Article",
+      "type_raw": "Journal Article",
+      "date_issued": "2021-03-14",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2021-04-02"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000002",
+      "title": "[SAMPLE] A field guide to sample datasets",
+      "department": "Biological Sciences",
+      "type": "Article",
+      "type_raw": "Article",
+      "date_issued": "2020-11-09",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2021-01-20"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000003",
+      "title": "[SAMPLE] Pollinator networks in fragmented grassland",
+      "department": "Biological Sciences",
+      "type": "Article",
+      "type_raw": "Journal Article",
+      "date_issued": "2022-06",
+      "date_issued_granularity": "month",
+      "date_accessioned": "2022-07-11"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000004",
+      "title": "[SAMPLE] Gene expression under simulated drought",
+      "department": "Biological Sciences",
+      "type": "Dataset",
+      "type_raw": "Dataset",
+      "date_issued": "2022-01-01",
+      "date_issued_granularity": "year",
+      "date_accessioned": "2022-02-15"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000005",
+      "title": "[SAMPLE] Microbial diversity of alpine soils (raw counts)",
+      "department": "Biological Sciences",
+      "type": "Dataset",
+      "type_raw": "Dataset",
+      "date_issued": "2023-05-30",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2023-06-05"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000006",
+      "title": "[SAMPLE] Phylogenetics of the sample genus",
+      "department": "Biological Sciences",
+      "type": "Thesis",
+      "type_raw": "Thesis",
+      "date_issued": "2019-01-01",
+      "date_issued_granularity": "year",
+      "date_accessioned": "2021-09-01"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000007",
+      "title": "[SAMPLE] Cellular responses to heat shock: a review",
+      "department": "Biological Sciences",
+      "type": "Book Chapter",
+      "type_raw": "Book chapter",
+      "date_issued": "2020-01-01",
+      "date_issued_granularity": "year",
+      "date_accessioned": "2021-03-03"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000008",
+      "title": "[SAMPLE] Remote sensing of canopy phenology",
+      "department": "Biological Sciences",
+      "type": "Conference",
+      "type_raw": "Conference Proceeding",
+      "date_issued": "2023-02-18",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2023-03-01"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000009",
+      "title": "[SAMPLE] Notes on tardigrade cryptobiosis",
+      "department": "Biological Sciences",
+      "type": "Other",
+      "type_raw": null,
+      "date_issued": null,
+      "date_issued_granularity": null,
+      "date_accessioned": "2021-05-19"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000010",
+      "title": "[SAMPLE] Long-term monitoring of estuary salinity",
+      "department": "Biological Sciences",
+      "type": "Article",
+      "type_raw": "Journal Article",
+      "date_issued": "2024-04-01",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2024-04-09"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000011",
+      "title": "[SAMPLE] Population model calibration data",
+      "department": "Biological Sciences",
+      "type": "Dataset",
+      "type_raw": "Dataset",
+      "date_issued": "2024-02",
+      "date_issued_granularity": "month",
+      "date_accessioned": "2024-02-28"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000012",
+      "title": "[SAMPLE] Amphibian call surveys, 2018-2022",
+      "department": "Biological Sciences",
+      "type": "Article",
+      "type_raw": "Article",
+      "date_issued": "2023-08-22",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2023-09-10"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000022",
+      "title": "[SAMPLE] A lightweight scheduler for sample workloads",
+      "department": "Computer Science",
+      "type": "Article",
+      "type_raw": "Journal Article",
+      "date_issued": "2022-12-01",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2023-01-09"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000023",
+      "title": "[SAMPLE] Benchmarking JSON parsers",
+      "department": "Computer Science",
+      "type": "Article",
+      "type_raw": "Article",
+      "date_issued": "2023-04-19",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2023-05-02"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000024",
+      "title": "[SAMPLE] On the portability of reporting pipelines",
+      "department": "Computer Science",
+      "type": "Thesis",
+      "type_raw": "Thesis",
+      "date_issued": "2021-01-01",
+      "date_issued_granularity": "year",
+      "date_accessioned": "2021-10-11"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000025",
+      "title": "[SAMPLE] Static site generators: a survey",
+      "department": "Computer Science",
+      "type": "Book Chapter",
+      "type_raw": "Book chapter",
+      "date_issued": "2020-08",
+      "date_issued_granularity": "month",
+      "date_accessioned": "2021-06-07"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000026",
+      "title": "[SAMPLE] Reproducible builds, working notes",
+      "department": "Computer Science",
+      "type": "Other",
+      "type_raw": null,
+      "date_issued": null,
+      "date_issued_granularity": null,
+      "date_accessioned": "2022-11-15"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000027",
+      "title": "[SAMPLE] Graph traversal micro-optimizations",
+      "department": "Computer Science",
+      "type": "Conference",
+      "type_raw": "Conference Proceeding",
+      "date_issued": "2024-03-08",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2024-03-15"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000028",
+      "title": "[SAMPLE] Sample telemetry dataset (anonymized)",
+      "department": "Computer Science",
+      "type": "Dataset",
+      "type_raw": "Dataset",
+      "date_issued": "2024-01-01",
+      "date_issued_granularity": "year",
+      "date_accessioned": "2024-01-14"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000013",
+      "title": "[SAMPLE] Trade routes of the sample archipelago",
+      "department": "History",
+      "type": "Article",
+      "type_raw": "Journal Article",
+      "date_issued": "2021-07-01",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2021-08-14"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000014",
+      "title": "[SAMPLE] Archival silences in municipal records",
+      "department": "History",
+      "type": "Article",
+      "type_raw": "Article",
+      "date_issued": "2022-09-05",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2022-10-01"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000015",
+      "title": "[SAMPLE] Oral histories of the river valley",
+      "department": "History",
+      "type": "Thesis",
+      "type_raw": "Thesis",
+      "date_issued": "2020-01-01",
+      "date_issued_granularity": "year",
+      "date_accessioned": "2021-02-22"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000016",
+      "title": "[SAMPLE] Cartography and empire: a reassessment",
+      "department": "History",
+      "type": "Book Chapter",
+      "type_raw": "Book chapter",
+      "date_issued": "2019-06",
+      "date_issued_granularity": "month",
+      "date_accessioned": "2021-04-18"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000017",
+      "title": "[SAMPLE] Labour movements in the interwar period",
+      "department": "History",
+      "type": "Thesis",
+      "type_raw": "Dissertation",
+      "date_issued": "2018-01-01",
+      "date_issued_granularity": "year",
+      "date_accessioned": "2021-01-05"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000018",
+      "title": "[SAMPLE] Photographic collection finding aid",
+      "department": "History",
+      "type": "Other",
+      "type_raw": null,
+      "date_issued": "2022-01-01",
+      "date_issued_granularity": "year",
+      "date_accessioned": "2022-03-30"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000019",
+      "title": "[SAMPLE] Currency and credit in early modern towns",
+      "department": "History",
+      "type": "Article",
+      "type_raw": "Journal Article",
+      "date_issued": "2023-11-27",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2023-12-04"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000020",
+      "title": "[SAMPLE] Conference notes: teaching local history",
+      "department": "History",
+      "type": "Conference",
+      "type_raw": "Presentation",
+      "date_issued": "2024-05-16",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2024-05-20"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000021",
+      "title": "[SAMPLE] Parish registers, transcribed sample set",
+      "department": "History",
+      "type": "Dataset",
+      "type_raw": "Dataset",
+      "date_issued": "2023-03-01",
+      "date_issued_granularity": "day",
+      "date_accessioned": "2023-03-12"
+    }
+  ]
+}

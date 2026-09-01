@@ -1,0 +1,83 @@
+# Scheduled full-refresh sync.
+#
+# In THIS public reference repo the job runs the pipeline against the public
+# DSpace demo (via config.example.yaml) purely to prove it still works, and
+# uploads the result as a build artifact. It does NOT commit data back --
+# data/items.json is git-ignored and, in a real deployment, holds institutional
+# data that must never land in a public repo.
+#
+# To use this in a PRIVATE fork as your delivery mechanism:
+#   1. Provide your own config (see the "Sync" step for the secret pattern).
+#   2. Set repository variable COMMIT_DATA=true so the commit step runs.
+#   3. Remove data/items.json from .gitignore (both copies) so it can be tracked.
+
+name: sync
+
+on:
+  schedule:
+    # Weekly, Mondays 06:00 UTC. Full refresh is cheap at this scale.
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}
+
+# Only the guarded commit step needs write access.
+permissions:
+  contents: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Guard the (optional) commit path: don't publish a dataset built by
+      # code whose unit tests are failing.
+      - name: Run tests
+        run: python -m pytest -q
+
+      # This public repo has no config.yaml (it is git-ignored), so the
+      # scheduled run uses config.example.yaml -> the public DSpace demo. No
+      # real institutional data is involved.
+      #
+      # In a PRIVATE fork, inject your own config instead, e.g.:
+      #   - name: Write config
+      #     run: printf '%s' "${{ secrets.CONFIG_YAML }}" > config.yaml
+      # then drop the --config flag (./config.yaml is the default).
+      - name: Sync
+        run: python -m src.sync --config config.example.yaml --out data/items.json
+
+      - name: Upload dataset artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: items-json
+          path: data/items.json
+          retention-days: 14
+
+      # DISABLED by default (COMMIT_DATA unset). Enable only in a private fork
+      # where committing the dataset is the intended delivery mechanism and no
+      # real institutional data is exposed by doing so.
+      - name: Commit updated dataset
+        if: vars.COMMIT_DATA == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f data/items.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: refresh data/items.json [skip ci]"
+            git push
+          fi

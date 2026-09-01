@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------------------
+# Copy this file to config.yaml and edit it for your DSpace instance.
+#   cp config.example.yaml config.yaml
+# config.yaml is git-ignored; this example file is the committed reference and
+# is wired to the public DSpace demo so a fresh clone runs end to end.
+# ---------------------------------------------------------------------------
+
+# DSpace server root (everything before /api/...). No trailing slash needed.
+base_url: "https://demo.dspace.org/server"
+
+# Top-level communities to report on. Each item is tagged with `label` as its
+# "department" in the dashboard. Resolution is scoped by community UUID -- one
+# discovery query per community -- so list the communities, not collections.
+#
+# Find your UUIDs at:
+#   <base_url>/api/core/communities/search/top
+communities:
+  - label: "Publications"
+    uuid: "0958c910-2037-42a9-81c7-dca80e3892b4"
+  - label: "Compound Journals"
+    uuid: "8b632938-77c2-487c-81f0-e804f63e68e6"
+  - label: "DCAT Journals"
+    uuid: "c964546c-f8ec-4386-aa2a-6939843a0808"
+
+# Raw dc.type value  ->  clean category shown in the dashboard.
+# Matching is exact but case-insensitive and ignores surrounding whitespace.
+# Build this by hand from the raw values your repository actually contains --
+# categories are never inferred heuristically. Inspect your long tail at:
+#   <base_url>/api/discover/search/objects?dsoType=item&size=100
+type_map:
+  "Article": "Article"
+  "Journal Article": "Article"
+  "Preprint": "Article"
+  "Book": "Book"
+  "Book chapter": "Book Chapter"
+  "Book Chapter": "Book Chapter"
+  "Thesis": "Thesis"
+  "Dissertation": "Thesis"
+  "Dataset": "Dataset"
+  "Conference Proceeding": "Conference"
+  "Presentation": "Conference"
+  "Learning Object": "Learning Object"
+  "Image": "Image"
+  "Abstract": "Other"
+
+# Category for any dc.type that is missing or not in the map above.
+type_map_default: "Other"
+
+# Metadata fields to strip before anything is written out, even though the API
+# may return them. dc.description.provenance is always stripped regardless.
+pii_fields:
+  - "dc.description.provenance"
+
+# --- Fetch tuning (optional; these are the defaults) ------------------------
+page_size: 100          # DSpace commonly caps discovery pages at 100
+request_timeout: 30     # seconds per HTTP request
+max_retries: 3          # extra attempts on 429 / 5xx / connection errors

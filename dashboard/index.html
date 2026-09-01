@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSpace Submission Reporting Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js, pinned. UMD build exposes a global `Chart`.
+       Add an SRI integrity hash here if you want to lock the exact file. -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="charts.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <h1>DSpace Submission Reporting Dashboard</h1>
+    <p class="tagline">
+      A dependency-free reporting pipeline for DSpace 7+ repositories &mdash;
+      Python, GitHub Actions, and static HTML, no vendor platform.
+    </p>
+  </header>
+
+  <p class="meta" aria-live="polite">
+    <span id="data-badge" class="badge">&hellip;</span>
+    <span id="meta">Loading data&hellip;</span>
+  </p>
+
+  <div id="error" class="error" hidden></div>
+
+  <section class="controls" hidden id="controls">
+    <label for="date-view">Chart submissions by:</label>
+    <select id="date-view">
+      <option value="accessioned" selected>Date added to repository (dc.date.accessioned)</option>
+      <option value="issued">Date published (dc.date.issued)</option>
+    </select>
+    <span id="date-view-note" class="hint"></span>
+  </section>
+
+  <main class="grid" hidden id="charts">
+    <figure class="card">
+      <figcaption>Submission volume over time</figcaption>
+      <div class="canvas-wrap"><canvas id="chart-time"></canvas></div>
+    </figure>
+    <figure class="card">
+      <figcaption>Items by type</figcaption>
+      <div class="canvas-wrap"><canvas id="chart-type"></canvas></div>
+    </figure>
+    <figure class="card">
+      <figcaption>Items by department</figcaption>
+      <div class="canvas-wrap"><canvas id="chart-dept"></canvas></div>
+    </figure>
+  </main>
+
+  <noscript><p class="error">This dashboard needs JavaScript to render the charts.</p></noscript>
+
+  <footer class="page-footer">
+    <p>
+      Reference implementation. Real institutional data stays out of this repo &mdash;
+      fork it, edit <code>config.yaml</code>, and point it at your own instance.
+    </p>
+  </footer>
+</body>
+</html>

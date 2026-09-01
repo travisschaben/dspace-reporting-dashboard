@@ -1,0 +1,5 @@
+# Real sync output — never committed. The committed sample is items.example.json.
+# (data/items.json is also covered by the repo-root .gitignore; this is the
+# local, explicit copy and additionally covers the atomic-write temp file.)
+items.json
+items.json.tmp
