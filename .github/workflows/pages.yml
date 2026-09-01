@@ -1,0 +1,63 @@
+# Publish the static dashboard to GitHub Pages.
+#
+# The published site mirrors the repo layout (dashboard/ + data/) so the
+# dashboard's relative data path (../data/items.example.json) resolves exactly
+# as it does locally. Only the committed sample data is deployed -- never
+# data/items.json.
+#
+# Landing URL: https://<owner>.github.io/<repo>/  -> redirects to ./dashboard/
+
+name: pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "dashboard/**"
+      - "data/items.example.json"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assemble site (dashboard/ + sample data only)
+        run: |
+          mkdir -p _site/dashboard _site/data
+          cp dashboard/index.html dashboard/charts.js dashboard/style.css _site/dashboard/
+          cp data/items.example.json _site/data/
+          cat > _site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <meta charset="utf-8">
+          <title>DSpace Submission Reporting Dashboard</title>
+          <meta http-equiv="refresh" content="0; url=./dashboard/">
+          <a href="./dashboard/">Open the dashboard</a>
+          HTML
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
